@@ -1,0 +1,100 @@
+body{
+    background-color: #333330;
+    overflow: scroll;
+}
+.poster{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+ 
+    flex-direction: row;
+    margin-left:100px;
+    
+    
+}
+
+.box{
+    display: inline-flex;
+    flex-wrap: wrap;
+    width:22%;
+    margin-bottom: 40px;
+}
+
+.pic {
+ margin:20px; 
+ width:250px;
+ height:350px; 
+
+}
+.pic:hover{
+   border:1px solid white;
+   background-color: #fff;
+   opacity: 0.3;
+   transform: scale(1.1);
+}
+
+.title{
+    margin:20px;
+    padding:20px;  
+    color:white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightseagreen;
+    width:100%;
+}
+#count{
+    color:lightseagreen;
+    border:1px solid #333330;
+    background-color: #333330;
+    padding:9px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.getMovie{
+    display:inline-block;
+}
+.pagination{
+    display:inline-block;
+    float:right;
+}
+
+.menu{
+    background-color: lightseagreen;
+    padding:20px;
+    margin-bottom: 30px;
+ 
+}
+input{
+    width:250px;
+    padding:10px;
+    margin:5px 5px 5px 5px ;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    border:1px solid #333330;
+    background-color:#333330;
+    color:lightseagreen;
+}
+input::placeholder{
+    color:silver;
+}
+input:focus{
+    border:1px solid #333330;
+    background-color:lightseagreen;
+    color:white;
+}
+
+button{
+    width:200px;
+    background-color: #333330;
+    border:1px solid #333330;
+    color:lightseagreen;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:10px;
+    /* margin:0 5px; */
+   
+}
+button:hover{
+    background-color:lightseagreen;
+    color:#333330;
+    border:1px solid #333330;
+}

@@ -1,0 +1,1 @@
+ console.log('here watcher is looking for changes in directory');
