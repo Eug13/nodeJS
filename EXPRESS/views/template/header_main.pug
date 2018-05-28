@@ -1,0 +1,76 @@
+header.header
+    div.container-fluid.header-top
+        div.container
+            div.row
+                div.col-md-4
+                    div.toll-free
+                        i.icon-toll
+                        span Toll for free:
+                        a(href='tel:')
+                            span=toll_for_free
+                div.col-md-5
+                    div.call-now
+                        i.icon-call
+                        span Call now:
+                        a(href='tel:')
+                            span=call_now
+
+                div.col-md-offset-1.col-md-2
+                    div.social
+                        span Join us:
+                        a(href=pinterest_link target=_blank).pinterest
+                        a(href=twitter_link target=_blank).twitter
+                        a(href=facebook_link target=_blank).facebook
+
+    div.container-fluid.header-nav
+        div.container
+            div.row
+                div.col-md-2.col-sm-5.col-xs-6
+                    a(href='#').logo
+                        img(src="img/logo.png" alt="logo")
+                div.burger
+                    span.burger-line.burger-line-top
+                    span.burger-line.burger-line-mid
+                    span.burger-line.burger-line-bot
+
+                div.col-md-10.width-100
+                    if main_menu
+                        nav
+                            ul
+                                for item in main_menu
+                                    li
+                                        a(href=item)=item
+                    else
+                        div Main menu is empty!
+
+    div.container-fluid.header-middle
+        div.container
+            div.row
+                div.col-lg-2.col-md-3
+                    a(href="#").btn-chat
+                        i.icon-comments
+                        i.fa.fa-angle-right
+                        span live chat
+                div.col-lg-8.col-md-9.col-xs-12
+                    span.header-middle-title Custom Writing service
+                div.col-lg-offset-3.col-lg-5.col-md-offset-5.col-md-7.col-xs-12
+                    span.header-middle-title2 the key to success
+                div.col-lg-offset-3.col-lg-5.col-md-offset-6.col-md-6.col-sm-12.hidden-xs
+                    div.header-info
+                        h5 You are at right place!
+                        p EssayService.com is a top quality writing service
+                div.col-lg-offset-6.col-lg-3.col-md-offset-8.col-md-3.col-sm-offset-3.col-sm-6.col-xs-offset-2.col-xs-8
+                    a(href="#").btn-order order now
+                div.multi-bg
+    div.container-fluid.header-footer
+        div.container
+            div.row
+                div.col-lg-6.col-md-9
+                    div.header-footer-content
+                        p Special Offer:
+                            a(href="#") Get limited discounts
+
+                div.col-lg-3.col-md-3
+                    a(href="#").btn-discount the list of discount
+    
+
