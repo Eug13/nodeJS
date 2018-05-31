@@ -7,20 +7,13 @@ html(lang='en')
             link(rel='stylesheet', href='style.css')
             link(href='https://fonts.googleapis.com/css?family=Passion+One', rel='stylesheet', type='text/css')
             link(href='https://fonts.googleapis.com/css?family=Oxygen', rel='stylesheet', type='text/css')
-            title Admin
+            title Login
       body
             .container
                   .row.main
                         .main-login.main-center
                               h5 Sign up once and watch any of our free demos.
-                              form(method='post', action='/signup')
-                                    .form-group
-                                          label.cols-sm-2.control-label(for='name') Your Name
-                                          .cols-sm-10
-                                                .input-group
-                                                      span.input-group-addon
-                                                            i.fa.fa-user.fa(aria-hidden='true')
-                                                      input#name.form-control(type='text', name='name', placeholder='Enter your Name')
+                              form(method='post', action='/login')
                                     .form-group
                                           label.cols-sm-2.control-label(for='email') Your Email
                                           .cols-sm-10
@@ -29,26 +22,13 @@ html(lang='en')
                                                             i.fa.fa-envelope.fa(aria-hidden='true')
                                                       input#email.form-control(type='text', name='email', placeholder='Enter your Email')
                                     .form-group
-                                          label.cols-sm-2.control-label(for='surname') Surname
-                                          .cols-sm-10
-                                                .input-group
-                                                      span.input-group-addon
-                                                            i.fa.fa-users.fa(aria-hidden='true')
-                                                      input#username.form-control(type='text', name='surname', placeholder='Enter your Username')
-                                    .form-group
                                           label.cols-sm-2.control-label(for='password') Password
                                           .cols-sm-10
                                                 .input-group
                                                       span.input-group-addon
                                                             i.fa.fa-lock.fa-lg(aria-hidden='true')
                                                       input#password.form-control(type='password', name='password', placeholder='Enter your Password')
-                                    .form-group
-                                          label.cols-sm-2.control-label(for='password') Age
-                                          .cols-sm-10
-                                                .input-group
-                                                      span.input-group-addon
-                                                            i.fa.fa-lock.fa-lg(aria-hidden='true')
-                                                      input#password.form-control(type='number', name='age', placeholder='Enter your age')                  
+                                               
                                     .form-group
                                           input#button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit',name='submit')
           

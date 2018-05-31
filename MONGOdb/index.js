@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const Users = require('./model/users.model');
-//MONGOOSE
+
+const bcrypt = require('bcrypt');
 
 server.listen(80, () => console.log('running!!!!!!!!!!'));
 
@@ -24,15 +25,21 @@ server.use('/js', express.static(__dirname + "/js"));
 server.get("/", (req, res) => {
     // res.send('hello express');
     res.render('index');//for pug
-
 })
+
+server.get("/login", (req, res) => {
+    res.render('login');//for pug
+})
+
 server.use(bodyParser());
 
 server.post('/signup', (req, res) => {
-    // const data = req.body;
+    const data = req.body;
+    console.log(data.password);
 
-    Users.find({ email: req.body.email })
+    Users.find({ email: data.email })
         .then(users => {
+            console.log(users);
             if (users.length >= 1) {
                 console.log('we are here');
                 return res.status(409).json({
@@ -40,7 +47,12 @@ server.post('/signup', (req, res) => {
                 })
 
             } else {
-                const user = new Users(req.body);
+                const user = new Users(data);
+                user.name = data.name;
+                user.surname = data.surname;
+                user.age = data.age;
+                user.email = data.email;
+                user.password = user.generateHash(data.password);
                 user.save();
                 res.send('OK');
 
@@ -53,11 +65,56 @@ server.post('/signup', (req, res) => {
                 //         res.redirect('/');
                 //     }
                 // })
-                 //====== second end ==========>
+                //====== second end ==========>
             }
         })
 });
 
+
+server.post('/login', (req, res) => {
+    const data = req.body;
+    // console.log(data.password);
+
+
+    Users.find({ email: data.email })
+        .then(users => {
+            // const checkedPass = users[0].generateHash(data.password);
+            // // console.log(checkedPass);
+            // if (users[0].validPassword(checkedPass)){
+            // //     console.log(users[0].password);
+            // console.log(users);
+            // }else{
+            //     console.log('nope');
+            // }
+            console.log(bcrypt.compareSync(data.password, users[0].password));
+            // if(!users[0].validPassword(checkedPass)){
+            //     // return done(null, false, req.flash('loginMessage', 'invalid password'));
+               
+            //     console.log('invalid password');
+            // }else{
+            //     console.log(users);   
+            // }
+            //    console.log(result);
+            //    console.log(users);
+            //    console.log(users.password);
+         
+           
+            //  console.log(" woohoo ");
+            // if (users.length >= 1) {
+            //     console.log('we are here');
+            //     return res.status(409).json({
+            //         message: 'Email exists'
+            //     })
+
+            // } else {
+                // const user = new Users(data);
+                //     user.email = data.email;
+                //     data.password = user.validPassword(data.password);
+                // res.send(users[0]);
+            // }
+        })
+
+});
 
 // Users.find()
 //     .then(users => {
