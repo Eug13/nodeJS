@@ -28,4 +28,5 @@ SchemaUsers = new Schema({
     }
 })
 
-mongoose.model("users", SchemaUsers);
+module.exports = mongoose.model("users", SchemaUsers);
+
