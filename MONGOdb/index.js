@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const Users = require('./model/users.model');
 
-server.listen(80, () => console.log('running!!!!!!!!!!'));
+server.listen(81, () => console.log('running!!!!!!!!!!'));
 
 mongoose.connect('mongodb://localhost/test')
     .then(console.log('connected !!'))
@@ -52,7 +52,7 @@ server.post('/signup', (req, res) => {
                 user.email = data.email;
                 user.password = user.generateHash(data.password);
                 user.save();
-                res.send('OK');
+                res.redirect('/login');
 
 
                 //====== second variant ==========>

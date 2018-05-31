@@ -1,0 +1,48 @@
+header.header
+      .container-fluid.header-top
+            .container
+                  .row
+                        .col-md-4
+                              .toll-free
+                                    i.icon.icon-toll
+                                    |  Toll for free: 
+                                    a(href='tel:')
+                                          span +1-(044)-147-0235
+                        .col-md-5
+                              .call-now
+                                    i.icon.icon-call
+                                    |  Call now: 
+                                    a(href='tel:')
+                                          span +1-(044)-147-0235
+                        .col-md-offset-1.col-md-2
+                              .social
+                                    | Join us:
+                                    a.pinterest(href='#')
+                                    a.twitter(href='#')
+                                    a.facebook(href='#')
+      .container-fluid.header-nav
+            .container
+                  .row
+                        .col-md-2.col-sm-5.col-xs-6
+                              a.logo(href='#')
+                                    img(src='img/logo.png', alt='logo')
+                        button.burger
+                              span.burger-line.burger-line-top
+                              span.burger-line.burger-line-mid
+                              span.burger-line.burger-line-bot
+                        .col-md-10.width-100
+                               if main_menu
+                                 nav
+                                    ul
+                                      for item in main_menu
+                                            li
+                                               a(href=item)=item
+                               else
+                                 div Main menu is empty!
+
+      .container-fluid.main-title.header-line
+            .container
+                  .row
+                        .col-md-12
+                              .title
+                                    span Title{span}

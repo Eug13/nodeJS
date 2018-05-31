@@ -6,3 +6,10 @@ cls
 
 use test //going to the test db
 show tables // show tables inside my db called test
+
+//file structure by default
+
+ npm i express-generator -g
+
+ express test  // will create file structure with folder test by default
+
