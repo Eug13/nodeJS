@@ -7,8 +7,6 @@ const bodyParser = require('body-parser');
 
 const Users = require('./model/users.model');
 
-const bcrypt = require('bcrypt');
-
 server.listen(80, () => console.log('running!!!!!!!!!!'));
 
 mongoose.connect('mongodb://localhost/test')
@@ -78,40 +76,11 @@ server.post('/login', (req, res) => {
 
     Users.find({ email: data.email })
         .then(users => {
-            // const checkedPass = users[0].generateHash(data.password);
-            // // console.log(checkedPass);
-            // if (users[0].validPassword(checkedPass)){
-            // //     console.log(users[0].password);
-            // console.log(users);
-            // }else{
-            //     console.log('nope');
-            // }
-            console.log(bcrypt.compareSync(data.password, users[0].password));
-            // if(!users[0].validPassword(checkedPass)){
-            //     // return done(null, false, req.flash('loginMessage', 'invalid password'));
-               
-            //     console.log('invalid password');
-            // }else{
-            //     console.log(users);   
-            // }
-            //    console.log(result);
-            //    console.log(users);
-            //    console.log(users.password);
-         
-           
-            //  console.log(" woohoo ");
-            // if (users.length >= 1) {
-            //     console.log('we are here');
-            //     return res.status(409).json({
-            //         message: 'Email exists'
-            //     })
-
-            // } else {
-                // const user = new Users(data);
-                //     user.email = data.email;
-                //     data.password = user.validPassword(data.password);
-                // res.send(users[0]);
-            // }
+            if (!users[0].validPassword(data.password)) {
+                res.send('Your password is wrong try again!');
+            } else {
+                res.send(users);
+            }
         })
 
 });
