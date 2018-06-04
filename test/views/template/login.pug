@@ -10,8 +10,8 @@ main.login
                                           span.close-line.close-line-bot
                               .green-content
                                     form(method='post' action='/login')
-                                          input(type='email', placeholder='Email')
-                                          input(type='password', placeholder='Password')
+                                          input(type='email',name='email' placeholder='Email')
+                                          input(type='password',name='password' placeholder='Password')
                                           .login-links
                                                 .forgot-pass
                                                       a(href='#') Forgot your password?
@@ -19,6 +19,5 @@ main.login
                                                       a(href='#') Registration & order
                                                 .reg
                                                       a(href='#') Free registration
-                                          a.btn-order(type='submit' href='#')
-                                                i.fa.fa-angle-right
-                                                | Login
+                                          input.btn-order(type='submit' value="login")
+                                             

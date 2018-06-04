@@ -1,0 +1,28 @@
+main.blog
+      .container
+            .blog-content
+                        .post
+                              .row
+                                    .col-md-2
+                                          .left-info
+                                                .data
+                                                      span.month AUG
+                                                      span.day 3
+                                                      span.year 2014
+                                                .comments
+                                                      a(href='#')
+                                                            span.number-comment 12
+                                                            | comments
+                                    .col-md-10.line-dashed
+                                          .circle
+                                          .right-blog
+                                                .blog-image
+                                                      img(src='../img/blog.png', alt='blog')
+                                                .posted
+                                                      p
+                                                            | posted by 
+                                                            a(href='#')=post.author
+                                                .name-of-blog
+                                                      a(href=`/blog/${post._id}`)=post.title
+                                                .description-of-blog
+                                                      p=post.text

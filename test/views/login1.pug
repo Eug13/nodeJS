@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+      head
+            meta(name='viewport', content='width=device-width, initial-scale=1')
+            link(href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css', rel='stylesheet',integrity= 'sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4' crossorigin='anonymous')
+            link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css')
+            link(rel='stylesheet', href='style.css')
+            link(href='https://fonts.googleapis.com/css?family=Passion+One', rel='stylesheet', type='text/css')
+            link(href='https://fonts.googleapis.com/css?family=Oxygen', rel='stylesheet', type='text/css')
+            title Login
+      body
+            .container
+                  .row.main
+                        .main-login.main-center
+                              h5 Sign up once and watch any of our free demos.
+                              form(method='post', action='/login1')
+                                    .form-group
+                                          label.cols-sm-2.control-label(for='author') author
+                                          .cols-sm-10
+                                                .input-group
+                                                      span.input-group-addon
+                                                            i.fa.fa-envelope.fa(aria-hidden='true')
+                                                      input#email.form-control(type='text', name='author', placeholder='Enter your name')
+                                    .form-group
+                                          label.cols-sm-2.control-label(for='title') TITLE
+                                          .cols-sm-10
+                                                .input-group
+                                                      span.input-group-addon
+                                                            i.fa.fa-envelope.fa(aria-hidden='true')
+                                                      input#email.form-control(type='text', name='title', placeholder='Enter your title')
+                                    .form-group
+                                          label.cols-sm-2.control-label(for='text') TEXT
+                                          .cols-sm-10
+                                                .input-group
+                                                      span.input-group-addon
+                                                            i.fa.fa-lock.fa-lg(aria-hidden='true')
+                                                      input#password.form-control(type='text', name='text', placeholder='Enter your text')
+                                               
+                                    .form-group
+                                          input#button.btn.btn-primary.btn-lg.btn-block.login-button(type='submit',name='submit')
+          
+            script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+            
+            script(src='js/bootstrap.min.js')
