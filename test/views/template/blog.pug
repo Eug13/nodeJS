@@ -7,9 +7,9 @@ main.blog
                                     .col-md-2
                                           .left-info
                                                 .data
-                                                      span.month AUG
-                                                      span.day 3
-                                                      span.year 2014
+                                                      span.month=post.date.getMonth()
+                                                      span.day=post.date.getDay()
+                                                      span.year=post.date.getFullYear()
                                                 .comments
                                                       a(href='#')
                                                             span.number-comment 12
@@ -26,7 +26,7 @@ main.blog
                                                 .name-of-blog
                                                       a(href=`/blog/${post._id}`)=post.title
                                                 .description-of-blog
-                                                      p=post.text
+                                                      p!=post.text
                                                 .continue-reading
                                                       a.btn-read-more(href=`/blog/${post._id}`) continue reading
 

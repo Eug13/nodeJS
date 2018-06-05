@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
     Posts.find()
         .sort('-date')
         .then(posts => {
+            // console.log(posts[0].date.month);
             res.render('blog', {
                 title: '[Blog Page]',
                 posts

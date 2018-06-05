@@ -8,6 +8,10 @@ SchemaPosts = new Schema({
         type:Date,
         default:new Date()
     },
+    category:{
+        type: String,
+        required: true
+    },
     author: {
         type: String,
         required: true
@@ -22,21 +26,6 @@ SchemaPosts = new Schema({
     }
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

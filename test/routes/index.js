@@ -109,7 +109,6 @@ router.post('/login1', (req, res) => {
 
   Posts.find({ title: data.title })
     .then(posts => {
-      console.log(posts);
       if (posts.length >= 1) {
         console.log('we are here');
         return res.status(409).json({
@@ -117,6 +116,7 @@ router.post('/login1', (req, res) => {
         })
       } else {
         const blog = new Posts(data);
+        blog.category = data.category;
         blog.author = data.author;
         blog.title = data.title;
         blog.text = data.text;
